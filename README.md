@@ -1,6 +1,6 @@
 # AI Text Detector
 
-<img src="https://raw.githubusercontent.com/pinkythegawd/ai-text-detector/refs/heads/main/static/images/logo.png" style="width: 70%">
+<img src="https://raw.githubusercontent.com/pinkythegawd/ai-text-detector/refs/heads/main/static/images/logo.png" style="width: 60%">
 
 **Created by MikePinku**
 
