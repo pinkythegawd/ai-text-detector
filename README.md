@@ -91,3 +91,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - OpenAI for the GPT-2 model
 - Hugging Face for the Transformers library
 - Flask community for the web framework
+</p>
+
+Developed with ❤️ by MikePinku
+
+For questions or support, please contact: mikepinkuofficial@gmail.com
