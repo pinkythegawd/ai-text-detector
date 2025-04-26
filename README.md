@@ -29,7 +29,7 @@ A Flask-based web application that detects whether text was written by a human o
 ```bash
 git clone https://github.com/MikePinku/ai-text-detector.git
 cd ai-text-detector
-```bash
+```
 
 2. Create and activate a virtual environment:
 python -m venv venv
