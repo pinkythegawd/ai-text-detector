@@ -38,37 +38,47 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
 
 3. Install dependencies:
+```bash
 pip install -r requirements.txt
+```
 
 4. Download the GPT-2 model (will happen automatically on first run)
 
 5. Run the application:
+```bash
 python app.py
+```
 
 6. Access the application at:
+```bash
 http://localhost:5000
+```
 
 ## API Documentation
 
 The application provides a REST API for text analysis. See the API Documentation after running the application for complete details.
 
 Example API Request:
+```bash
 curl -X POST \
   http://localhost:5000/api/detect \
   -H 'Authorization: Bearer YOUR_API_KEY' \
   -H 'Content-Type: application/json' \
   -d '{"text":"The text you want to analyze..."}'
+```
 
 ## Configuration
 
 Before deploying to production, make sure to:
 
 1. Set a proper secret key in app.py:
+```bash
 app.secret_key = 'your-secret-key-here'  # Change this!
+```
 
-2. Replace the mock databases with a real database system
+3. Replace the mock databases with a real database system
 
-3. Configure proper file storage for uploads
+4. Configure proper file storage for uploads
 
 ## License
 
