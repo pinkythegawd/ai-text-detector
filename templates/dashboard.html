@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Text Detector</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">AI Text Detector</a>
+            <div class="nav-links">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="/api"><i class="fas fa-code"></i> API</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container dashboard">
+        <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+        
+        <section class="overview-cards">
+            <div class="card">
+                <div class="card-icon" style="background-color: #4e73df;">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Total Analyses</h3>
+                    <span class="card-value" id="totalAnalyses">0</span>
+                    <span class="card-change positive"><i class="fas fa-arrow-up"></i> <span id="analysesChange">0%</span> this month</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon" style="background-color: #1cc88a;">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Human Texts</h3>
+                    <span class="card-value" id="humanTexts">0</span>
+                    <span class="card-change positive"><i class="fas fa-arrow-up"></i> <span id="humanChange">0%</span></span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon" style="background-color: #e74a3b;">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="card-info">
+                    <h3>AI Texts</h3>
+                    <span class="card-value" id="aiTexts">0</span>
+                    <span class="card-change negative"><i class="fas fa-arrow-down"></i> <span id="aiChange">0%</span></span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon" style="background-color: #f6c23e;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Accuracy</h3>
+                    <span class="card-value" id="accuracyRate">0%</span>
+                    <span class="card-change positive"><i class="fas fa-arrow-up"></i> <span id="accuracyChange">0%</span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-bar"></i> Analysis Trend</h3>
+                <canvas id="analysisTrendChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-pie"></i> Content Types</h3>
+                <canvas id="contentTypeChart"></canvas>
+            </div>
+        </section>
+
+        <section class="recent-activity">
+            <h3><i class="fas fa-clock"></i> Recent Activity</h3>
+            <div class="activity-list" id="activityList">
+                <!-- Activity items will be inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 AI Text Detector. MikePinku, All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
