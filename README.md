@@ -42,7 +42,9 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
+
 4. Download the GPT-2 model (will happen automatically on first run)
+
 
 5. Run the application:
 ```bash
