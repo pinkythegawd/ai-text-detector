@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - AI Text Detector</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">AI Text Detector</a>
+            <div class="nav-links">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="/api" class="active"><i class="fas fa-code"></i> API</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container api-docs">
+        <h1><i class="fas fa-code"></i> API Documentation</h1>
+        
+        <section class="api-overview">
+            <p>Integrate our AI text detection capabilities directly into your applications using our REST API.</p>
+            
+            <div class="api-key-box">
+                <h3>Your API Key:</h3>
+                <div class="api-key-container">
+                    <code id="apiKey">sk_test_51N... (register to get full key)</code>
+                    <button id="copyApiKey"><i class="far fa-copy"></i> Copy</button>
+                </div>
+                <p class="api-key-note">Keep this key secure. Do not share it publicly.</p>
+            </div>
+        </section>
+
+        <section class="endpoint">
+            <h2>Text Analysis Endpoint</h2>
+            <div class="endpoint-method get">POST</div>
+            <code class="endpoint-url">/api/detect</code>
+            
+            <h3>Request</h3>
+            <div class="code-block">
+                <pre>{
+    "text": "The text you want to analyze..."
+}</pre>
+            </div>
+            
+            <h3>Response</h3>
+            <div class="code-block">
+                <pre>{
+    "isHuman": false,
+    "confidence": 0.87,
+    "perplexity": 25.42,
+    "explanation": "The text perplexity score is 25.42...",
+    "timestamp": "2023-07-15T14:30:00Z"
+}</pre>
+            </div>
+            
+            <h3>Example using curl</h3>
+            <div class="code-block">
+                <pre>curl -X POST \
+  https://yourdomain.com/api/detect \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -d '{"text":"The text you want to analyze..."}'</pre>
+            </div>
+        </section>
+
+        <section class="endpoint">
+            <h2>Text Statistics Endpoint</h2>
+            <div class="endpoint-method get">POST</div>
+            <code class="endpoint-url">/api/stats</code>
+            
+            <h3>Request</h3>
+            <div class="code-block">
+                <pre>{
+    "text": "The text you want to analyze..."
+}</pre>
+            </div>
+            
+            <h3>Response</h3>
+            <div class="code-block">
+                <pre>{
+    "wordCount": 245,
+    "sentenceCount": 12,
+    "avgWordLength": 4.7,
+    "readability": 78.5
+}</pre>
+            </div>
+        </section>
+
+        <section class="rate-limits">
+            <h2><i class="fas fa-tachometer-alt"></i> Rate Limits</h2>
+            <p>Free tier: 100 requests/day</p>
+            <p>Pro tier: 5,000 requests/day</p>
+            <p>Enterprise: Custom limits</p>
+            
+            <button class="upgrade-btn"><i class="fas fa-rocket"></i> Upgrade Plan</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 AI Text Detector. MikePinku, All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/api.js"></script>
+</body>
+</html>
