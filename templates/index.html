@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Detector</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">AI Text Detector</a>
+            <div class="nav-links">
+                <a href="/" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="/api"><i class="fas fa-code"></i> API</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Detect AI-Generated Text</h1>
+            <p>Identify content created by GPT-2 and similar AI models with our advanced detection system</p>
+        </section>
+
+        <section class="detector-box">
+            <div class="input-section">
+                <textarea id="textInput" placeholder="Paste or type text here to analyze..."></textarea>
+                <div class="actions">
+                    <button id="analyzeBtn"><i class="fas fa-search"></i> Analyze Text</button>
+                    <span id="charCount">0 characters</span>
+                </div>
+                <div class="file-upload">
+                    <input type="file" id="fileUpload" accept=".txt,.pdf,.docx">
+                    <label for="fileUpload" class="file-upload-label">
+                        <i class="fas fa-upload"></i> Upload File
+                    </label>
+                </div>
+            </div>
+
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p>Analyzing text with GPT-2 detector...</p>
+            </div>
+
+            <div class="result" id="resultContainer">
+                <h3>Analysis Result:</h3>
+                <div class="result-content">
+                    <p id="resultText"></p>
+                    <div class="confidence-meter">
+                        <div class="meter-bar" id="confidenceBar"></div>
+                        <span id="confidenceLevel"></span>
+                    </div>
+                    <div class="details">
+                        <p id="explanation"></p>
+                        <button id="detailedReportBtn">View Detailed Report</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2><i class="fas fa-chart-bar"></i> Text Statistics</h2>
+            <div class="stats-grid" id="textStats">
+                <div class="stat-item">
+                    <span class="stat-value" id="wordCount">0</span>
+                    <span class="stat-label">Words</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="sentenceCount">0</span>
+                    <span class="stat-label">Sentences</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="avgWordLength">0</span>
+                    <span class="stat-label">Avg Word Length</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="readabilityScore">0</span>
+                    <span class="stat-label">Readability</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 AI Text Detector. MikePinku, All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="resultsModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Detailed Analysis Report</h3>
+            <div class="modal-body" id="modalResults">
+                <!-- Detailed results will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
