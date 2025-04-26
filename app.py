@@ -132,7 +132,7 @@ def api_key_required(f):
     return decorated_function
 
 # Routes
-@app.route('/')
+@app.route('/index')
 def index():
     if 'user_id' in session:
         user = users_db.get(session['user_id'], {})
